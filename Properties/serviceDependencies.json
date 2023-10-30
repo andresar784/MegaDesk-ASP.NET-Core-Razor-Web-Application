@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:MegaDesk_ASPNET_Core_Razor_Web_ApplicationContext"
+    }
+  }
+}

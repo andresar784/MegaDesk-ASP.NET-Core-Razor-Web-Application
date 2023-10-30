@@ -1,0 +1,72 @@
+﻿@page
+@model MegaDesk_ASP.NET_Core_Razor_Web_Application.Pages.Desks.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Desk[0].name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desk[0].drawers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desk[0].material)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desk[0].price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desk[0].height)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desk[0].width)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desk[0].surface)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Desk) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.drawers)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.material)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.height)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.width)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.surface)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

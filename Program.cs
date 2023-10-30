@@ -1,7 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using MegaDesk_ASP.NET_Core_Razor_Web_Application.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<MegaDesk_ASPNET_Core_Razor_Web_ApplicationContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MegaDesk_ASPNET_Core_Razor_Web_ApplicationContext") ?? throw new InvalidOperationException("Connection string 'MegaDesk_ASPNET_Core_Razor_Web_ApplicationContext' not found.")));
 
 var app = builder.Build();
 
